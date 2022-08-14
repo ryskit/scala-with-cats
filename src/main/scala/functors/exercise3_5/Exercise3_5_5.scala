@@ -33,5 +33,4 @@ object Exercise3_5_5 extends App {
 
   println(format(Box("hello")))
   println(format(Box(true)))
-
 }

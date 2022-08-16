@@ -1,5 +1,6 @@
 package monads.exercise4_1
 
+
 object Exercise4_1 extends App {
   trait Monad[F[_]] {
     def pure[A](a: A): F[A]

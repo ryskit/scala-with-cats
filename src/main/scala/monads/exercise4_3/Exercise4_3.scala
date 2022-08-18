@@ -3,6 +3,7 @@ package monads.exercise4_3
 import cats.{Id, Monad}
 import cats.syntax.functor._
 import cats.syntax.flatMap._
+import cats.MonadError
 
 object Exercise4_3 extends App {
 

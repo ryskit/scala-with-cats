@@ -1,12 +1,11 @@
 package foldable_and_traverse.exercise7_2
 
 import cats.Applicative
-import cats.syntax.applicative._
+import cats.instances.option._
 import cats.syntax.apply._
-import cats.instances.vector._
+import cats.syntax.applicative._
 
-object Exercise7_2_2_1 extends App {
-
+object Exercise7_2_2_2 extends App {
   def listTraverse[F[_]: Applicative, A, B](
     list: List[A]
   )(func: A => F[B]): F[List[B]] =
@@ -17,6 +16,9 @@ object Exercise7_2_2_1 extends App {
   def listSequence[F[_]: Applicative, B](list: List[F[B]]): F[List[B]] =
     listTraverse(list)(identity)
 
-  println(listSequence(List(Vector(1, 2), Vector(3, 4))))
-  println(listSequence(List(Vector(1, 2), Vector(3, 4), Vector(5, 6))))
+  def process(inputs: List[Int]): Option[List[Int]] =
+    listTraverse(inputs)(n => if (n % 2 == 0) Some(n) else None)
+
+  println(process(List(2, 4, 6)))
+  println(process(List(1, 2, 3)))
 }

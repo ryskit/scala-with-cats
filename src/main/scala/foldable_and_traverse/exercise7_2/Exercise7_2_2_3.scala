@@ -5,6 +5,7 @@ import cats.data.Validated
 import cats.instances.option._
 import cats.syntax.apply._
 import cats.syntax.applicative._
+import cats.Traverse
 
 object Exercise7_2_2_3 extends App {
   def listTraverse[F[_]: Applicative, A, B](

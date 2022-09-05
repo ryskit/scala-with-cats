@@ -1,9 +1,9 @@
 package map_reduce.exercise9_2
 
 import cats.Monoid
-import cats.syntax.monoid._
 import cats.instances.int._
 import cats.instances.string._
+import cats.syntax.monoid._
 
 object Exercise9_2 extends App {
 

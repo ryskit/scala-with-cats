@@ -7,7 +7,7 @@ import scala.concurrent.{Await, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration.Inf
 
-object Exercise9_3 extends App {
+object Exercise9_3_3 extends App {
 
   def parallelFoldMap[A, B: Monoid](values: Vector[A])(f: A => B): Future[B] = {
     val cpus      = Runtime.getRuntime.availableProcessors()
